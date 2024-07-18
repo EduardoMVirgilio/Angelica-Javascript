@@ -3,7 +3,7 @@ const enviar = (e) => {
   e.preventDefault();
   fetch("https://formsubmit.co/eduardomiguelvirgilio@gmail.com", {
     method: "POST",
-    body: JSON.stringify({
+    body: {
       nombre: form.elements.nombre.value,
       apellido: form.elements.apellido.value,
       email: form.elements.email.value,
@@ -12,7 +12,7 @@ const enviar = (e) => {
       _subject: "Correo desde la web",
       _autoresponse: "Gracias por tu mensaje",
       _captcha: false,
-    }),
+    },
   })
     .then((respuesta) => {
       return respuesta.text();
